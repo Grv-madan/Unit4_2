@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
       
     env:
-      SSH_PRIVATE_KEY: ${{ secrets.CIPIPELINE }}
+      SSH_PRIVATE_KEY: ${{ secrets.CIPIEPLINE }}
       USERNAME: ${{ secrets.USER_NAME }}
       HOST: ${{ secrets.HOST_NAME}} 
 
