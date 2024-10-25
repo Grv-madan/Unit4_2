@@ -41,6 +41,9 @@ jobs:
     - run: |
         ssh -i private_key.pem -o StrictHostKeyChecking=no $USERNAME@$HOST <<EOF
         cd /home/$USERNAME/app
+        sudo apt install python3-pip
+        wget https://bootstrap.pypa.io/get-pip.py | sudo python
+        wget https://bootstrap.pypa.io/get-pip.py | sudo python3
         python3 -m pip install flask
         nohup python3 madlibs.py >> app.log 2>&1 &
         disown
