@@ -40,7 +40,7 @@ jobs:
     - run: scp -i private_key.pem -o StrictHostKeyChecking=no -r ./* $USERNAME@$HOST:/home/$USERNAME/app
     - run: |
         ssh -i private_key.pem -o StrictHostKeyChecking=no $USERNAME@$HOST <<EOF
-        cd /home/root/app
+        cd /home/$USERNAME/app
         python3 -m pip install flask
         nohup python3 madlibs.py >> app.log 2>&1 &
         disown
